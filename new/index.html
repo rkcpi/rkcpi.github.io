@@ -307,7 +307,7 @@
 					<div class="col-6 col-12-narrower">
 
 						<section>
-							<a href="https://gradle.com/" class="image featured background-white"><img
+							<a target="_blank" rel="noopener noreferrer" href="https://gradle.com/" class="image featured background-white"><img
 									src="images/gradle.png" alt="" /></a>
 							<header>
 								<h3>Gradle GmbH</h3>
@@ -333,7 +333,7 @@
 					<div class="col-6 col-12-narrower">
 
 						<section>
-							<a href="#" class="image featured"><img class="background-white"
+							<a target="_blank" rel="noopener noreferrer" href="https://bryter.com" class="image featured"><img class="background-white"
 									src="images/bryter_logo_full_black.png" alt="" /></a>
 							<header>
 								<h3>BRYTER GmbH</h3>
@@ -364,7 +364,7 @@
 					<div class="col-6 col-12-narrower">
 
 						<section>
-							<a href="#" class="image featured"><img src="images/synyx-logo.svg" alt="" /></a>
+							<a target="_blank" rel="noopener noreferrer" href="https://synyx.de" class="image featured"><img src="images/synyx-logo.svg" alt="" /></a>
 							<header>
 								<h3>synyx GmbH & Co. KG</h3>
 							</header>
@@ -389,7 +389,7 @@
 					<div class="col-6 col-12-narrower">
 
 						<section>
-							<a href="#" class="image featured"><img src="images/cluetec_logo.png" alt="" /></a>
+							<a target="_blank" rel="noopener noreferrer" href="https://cluetec.de" class="image featured"><img src="images/cluetec_logo.png" alt="" /></a>
 							<header>
 								<h3>Cluetec GmbH</h3>
 							</header>
@@ -426,23 +426,25 @@
 			</header>
 			<footer>
 				<div class="content wrapper style4 special container medium">
-					<form action="https://formspree.io/f/xgebbeon" method="post">
+					<!-- <form action="https://formspree.io/f/xgebbeon" method="post"> -->
+					<form>
 						<div class="row gtr-50">
 							<div class="col-6 col-12-mobile">
-								<input type="text" name="name" placeholder="Name" />
+								<input type="text" name="name" placeholder="Name" required id="contact-name"/>
 							</div>
 							<div class="col-6 col-12-mobile">
-								<input type="text" name="email" placeholder="Email" />
+								<input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" required id="contact-email"/>
 							</div>
 							<div class="col-12">
-								<input type="text" name="subject" placeholder="Subject" />
+								<input type="text" name="mysubject" placeholder="Subject" required id="contact-subject"/>
 							</div>
 							<div class="col-12">
-								<textarea name="message" placeholder="Message" rows="7"></textarea>
+								<textarea name="message" placeholder="Message" rows="7" required id="contact-message"></textarea>
 							</div>
+							<input style="display: none;" type=”hidden” name=”_next” value=”https://sandra-thieme.de/new/index.html” />
 							<div class="col-12">
 								<ul class="buttons">
-									<li><input type="submit" class="special" value="Send Message" /></li>
+									<li><input type="submit" class="special" value="Send Message"/></li>
 								</ul>
 							</div>
 						</div>
@@ -488,6 +490,35 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#cta form').submit(function(e) {
+				e.preventDefault();
+				sendContactForm(e)
+			});
+		});
+		function sendContactForm(event) {
+			console.log("received event", event)
+			$.ajax({
+				url: "https://formspree.io/f/xgebbeon",
+				method: "POST",
+				dataType: "json",
+				data: {
+					name: $('#contact-name').val(),
+					email: $('#contact-email').val(),
+					mysubject: $('#contact-subject').val(),
+					message: $('#contact-message').val()
+				},
+				success: function() {
+					alert("Your request has been submitted. Thank you!")
+					$('#cta form').trigger('reset')
+				},
+				error: function() {
+					alert("Something went wrong while trying to submit the form.")
+				}
+				});
+		}
+	</script>
 
 </body>
 

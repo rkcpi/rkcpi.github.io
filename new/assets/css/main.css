@@ -1927,7 +1927,7 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-	border-color: #008080;
+	border-style: groove;
 }
 
 input[type="text"],
@@ -1990,8 +1990,9 @@ input[type="email"] {
 }
 
 .image.featured img {
-	display: block;
-	width: 100%;
+	width: 60%;
+	align-content: center;
+	filter: grayscale(80%);
 }
 
 /* Icon */
@@ -2768,7 +2769,7 @@ body.index #main {
 }
 
 #cta .content {
-	background: none;
+	background-color: #A594C080;
 }
 
 #cta header {
