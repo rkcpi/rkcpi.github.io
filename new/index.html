@@ -29,8 +29,8 @@
 					<li><a href="#main">About me</a></li>
 					<li><a href="#skills">Skills</a></li>
 					<li><a href="#experience">Experience</a></li>
-					<li><a href="#testimonials">References</a></li>
-					<li><a href="#cta">Contact</a></li>
+					<li><a href="#references">References</a></li>
+					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -245,7 +245,7 @@
 				</div>
 			</section>
 
-			<section class="wrapper style2 container special-alt" id="testimonials">
+			<section class="wrapper style2 container special-alt" id="references">
 				<header class="major">
 					<h2>What others say about <strong>me</strong></h2>
 				</header>
@@ -434,7 +434,7 @@
 		</article>
 
 		<!-- CTA -->
-		<section id="cta">
+		<section id="contact">
 
 			<header class="special container">
 				<span class="icon solid fa-envelope"></span>
@@ -509,7 +509,7 @@
 	<script src="assets/js/main.js"></script>
 	<script>
 		$(document).ready(function() {
-			$('#cta form').submit(function(e) {
+			$('#contact form').submit(function(e) {
 				e.preventDefault();
 				sendContactForm(e)
 			});
@@ -528,7 +528,7 @@
 				},
 				success: function() {
 					alert("Your request has been submitted. Thank you!")
-					$('#cta form').trigger('reset')
+					$('#contact form').trigger('reset')
 				},
 				error: function() {
 					alert("Something went wrong while trying to submit the form.")

@@ -2752,7 +2752,7 @@ body.index #main {
 
 /* CTA */
 
-#cta {
+#contact {
 	background-attachment: scroll, scroll, scroll, fixed;
 	background-color: #645862;
 	background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../../images/banner.webp");
@@ -2762,20 +2762,18 @@ body.index #main {
 	color: #F8F8FF;
 	padding: 5em;
 	text-align: center;
-
-
 }
 
-#cta .content {
+#contact .content {
 	background-color: #70589680;
 }
 
-#cta header {
+#contact header {
 	margin-bottom: 1em;
 }
 
-#cta header.special:before,
-#cta header.special:after {
+#contact header.special:before,
+#contact header.special:after {
 	border: none;
 }
 
@@ -2896,7 +2894,7 @@ body.index #main {
 
 	/* CTA */
 
-	#cta {
+	#contact {
 		padding: 4em;
 		background-attachment: scroll;
 	}
@@ -2980,7 +2978,7 @@ body.index #main {
 
 	/* CTA */
 
-	#cta {
+	#contact {
 		background-size: 15em, 15em, auto, cover;
 		padding: 3em;
 	}
@@ -3111,7 +3109,7 @@ body.index #main {
 
 	/* CTA */
 
-	#cta {
+	#contact {
 		margin: 0;
 	}
 
@@ -3467,7 +3465,7 @@ body.index #main {
 
 	/* CTA */
 
-	#cta {
+	#contact {
 		background-size: 10em, 10em, auto, cover;
 		padding: 3em 1.5em;
 	}
